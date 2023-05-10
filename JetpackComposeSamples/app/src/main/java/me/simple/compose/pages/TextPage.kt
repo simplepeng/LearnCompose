@@ -1,0 +1,127 @@
+package me.simple.compose.pages
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import me.simple.compose.AppPreview
+
+@Preview(
+    backgroundColor = android.graphics.Color.WHITE.toLong(),
+    showBackground = true
+)
+@Composable
+fun TextPage() {
+    Column {
+        HelloWorld()
+        TextSizeSample()
+        FontStyleSample()
+        FontFamilySample()
+        LetterSpacingSample()
+        TextDecorationSample()
+        TextAlignSample()
+//        JustifyTextAlignSample()
+        LineHeightSample()
+//        OverFlowSample()
+    }
+}
+
+@Composable
+fun HelloWorld() {
+    Text(
+        text = "Hello World",
+    )
+}
+
+@Composable
+fun TextSizeSample() {
+    Text(
+        text = "TextSize",
+        color = Color.Red,
+        fontSize = 15.sp
+    )
+}
+
+@Composable
+fun FontStyleSample() {
+    Text(
+        text = "Text FontStyle is Italic",
+        fontStyle = FontStyle.Italic
+    )
+}
+
+@Composable
+fun FontFamilySample() {
+    Text(
+        text = "FontFamily Text",
+        fontFamily = FontFamily.SansSerif
+    )
+}
+
+@Composable
+fun LetterSpacingSample() {
+    Text(
+        text = "LetterSpacing Text",
+        letterSpacing = 2.sp
+    )
+}
+
+@Composable
+fun TextDecorationSample() {
+    Text(
+        text = "TextDecoration",
+//        textDecoration = TextDecoration.Underline,
+//        textDecoration = TextDecoration.LineThrough,
+        textDecoration = TextDecoration.None,
+    )
+}
+
+@Composable
+fun TextAlignSample() {
+    Text(
+        text = "TextAlign",
+        modifier = Modifier.fillMaxWidth(),
+//        textAlign = TextAlign.End,
+        textAlign = TextAlign.Center,
+    )
+}
+
+@Composable
+fun JustifyTextAlignSample() {
+    Text(
+        text = "TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,TextAlign Justify Test,",
+        modifier = Modifier.fillMaxWidth(),
+        textAlign = TextAlign.Justify,
+    )
+}
+
+@Composable
+fun LineHeightSample() {
+    Text(
+        text = "Line Height Test ".repeat(10),
+        fontSize = 15.sp,
+        lineHeight = 20.sp
+    )
+}
+
+@AppPreview
+@Composable
+fun OverFlowSample() {
+    Text(
+        text = "Over Flow Test".repeat(10),
+//        overflow = TextOverflow.Ellipsis,
+//        overflow = TextOverflow.Clip,
+        overflow = TextOverflow.Visible,
+        maxLines = 2
+    )
+}
