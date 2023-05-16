@@ -2,10 +2,17 @@
 
 package me.simple.compose.pages
 
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -15,8 +22,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.simple.compose.App
 import me.simple.compose.AppPreview
@@ -24,7 +38,8 @@ import me.simple.compose.AppPreview
 @AppPreview
 @Composable
 fun TextFiledPage() {
-    Column {
+    val state = rememberScrollState()
+    Column(modifier = Modifier.verticalScroll(state)) {
         TextFiledSample()
         OutlineTextFiledSample()
         BasicTextFieldSample()
@@ -34,6 +49,12 @@ fun TextFiledPage() {
         LabelTextFiled()
         KeyboardOptionsTextFiled()
         KeyboardActionsTextFiled()
+        LinesTextFiled()
+        VisualTransformationTextFiled()
+        OnTextLayoutTextFiled()
+        InteractionSourceTextFiled()
+        CursorBrushTextFiled()
+        DecorationBoxTextFiled()
     }
 }
 
@@ -43,7 +64,8 @@ fun TextFiledSample() {
     var value by remember {
         mutableStateOf("Hello")
     }
-    TextField(value = value,
+    TextField(
+        value = value,
         onValueChange = {
             value = it
         })
@@ -60,7 +82,8 @@ fun OutlineTextFiledSample() {
     var value by remember {
         mutableStateOf("Hello")
     }
-    OutlinedTextField(value = value,
+    OutlinedTextField(
+        value = value,
         onValueChange = {
             value = it
         })
@@ -71,7 +94,8 @@ fun BasicTextFieldSample() {
     var value by remember {
         mutableStateOf("Hello")
     }
-    BasicTextField(value = value,
+    BasicTextField(
+        value = value,
         onValueChange = {
             value = it
         })
@@ -104,20 +128,35 @@ fun KeyboardOptionsTextFiled() {
         onValueChange = {
             value = it
         },
-        keyboardOptions = KeyboardOptions()
+        modifier = Modifier
+            .wrapContentHeight()
+            .fillMaxWidth()
+            .padding(vertical = 5.dp),
+        //兼容性不行，有些键盘都没适配，比如百度输入法
+        keyboardOptions = KeyboardOptions(
+            capitalization = KeyboardCapitalization.Characters,
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Go
+        )
     )
 }
 
 @Composable
 fun KeyboardActionsTextFiled() {
     var value by remember {
-        mutableStateOf("KeyboardOptions")
+        mutableStateOf("KeyboardActions")
     }
     BasicTextField(
         value = value,
         onValueChange = {
             value = it
         },
+        keyboardOptions = KeyboardOptions(
+            capitalization = KeyboardCapitalization.Characters,
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Go
+        ),
+        //需要搭配keyboardOptions
         keyboardActions = KeyboardActions(
             onDone = {
                 App.toast("onDone")
@@ -136,10 +175,101 @@ fun KeyboardActionsTextFiled() {
             },
             onSend = {
                 App.toast("onSend")
-            })
+            }),
 //        keyboardActions = KeyboardActions(onAny = {
-//
+//            App.toast("onAny")
 //        }),
+    )
+}
+
+@Composable
+fun LinesTextFiled() {
+    var value by remember {
+        mutableStateOf("Lines")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        singleLine = false,
+        maxLines = 5,
+        minLines = 2
+    )
+}
+
+//VisualTransformation 视觉变换
+@Composable
+fun VisualTransformationTextFiled() {
+    var value by remember {
+        mutableStateOf("VisualTransformation")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        visualTransformation = VisualTransformation.None
+    )
+}
+
+@Composable
+fun OnTextLayoutTextFiled() {
+    var value by remember {
+        mutableStateOf("OnTextLayout")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        onTextLayout = {
+
+        }
+    )
+}
+
+@Composable
+fun InteractionSourceTextFiled() {
+    var value by remember {
+        mutableStateOf("InteractionSource")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        interactionSource = MutableInteractionSource()
+    )
+}
+
+@Composable
+fun CursorBrushTextFiled() {
+    var value by remember {
+        mutableStateOf("CursorBrush")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        cursorBrush = SolidColor(Color.Green)
+    )
+}
+
+@Composable
+fun DecorationBoxTextFiled() {
+    var value by remember {
+        mutableStateOf("DecorationBox")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            value = it
+        },
+        decorationBox = {
+
+        }
     )
 }
 
