@@ -25,10 +25,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.OffsetMapping
+import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -50,6 +53,7 @@ fun TextFiledPage() {
         KeyboardOptionsTextFiled()
         KeyboardActionsTextFiled()
         LinesTextFiled()
+        MaxLengthTextFiled()
         VisualTransformationTextFiled()
         OnTextLayoutTextFiled()
         InteractionSourceTextFiled()
@@ -192,13 +196,28 @@ fun LinesTextFiled() {
         onValueChange = {
             value = it
         },
-        singleLine = false,
-        maxLines = 5,
+        maxLines = 3,
         minLines = 2
     )
 }
 
-//VisualTransformation 视觉变换
+@Composable
+fun MaxLengthTextFiled() {
+    val maxLength = 15
+    var value by remember {
+        mutableStateOf("MaxLength")
+    }
+    BasicTextField(
+        value = value,
+        onValueChange = {
+            if (it.length <= maxLength) {
+                value = it
+            }
+        },
+    )
+}
+
+//VisualTransformation 视觉转换
 @Composable
 fun VisualTransformationTextFiled() {
     var value by remember {
@@ -209,7 +228,12 @@ fun VisualTransformationTextFiled() {
         onValueChange = {
             value = it
         },
-        visualTransformation = VisualTransformation.None
+        visualTransformation = {
+            TransformedText(
+                AnnotatedString("*".repeat(it.text.length)),
+                OffsetMapping.Identity
+            )
+        }
     )
 }
 
@@ -276,7 +300,7 @@ fun DecorationBoxTextFiled() {
 @Composable
 fun EnableTextFiled() {
     var value by remember {
-        mutableStateOf("Hello")
+        mutableStateOf("EnableTextFiled")
     }
     TextField(
         value = value,
@@ -290,7 +314,7 @@ fun EnableTextFiled() {
 @Composable
 fun ReadOnlyTextFiled() {
     var value by remember {
-        mutableStateOf("Hello")
+        mutableStateOf("ReadOnlyTextFiled")
     }
     TextField(
         value = value,
