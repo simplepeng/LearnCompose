@@ -2,6 +2,8 @@
 
 [思维导图](https://www.zhixi.com/view/571b1896)
 
+有你觉得不错的学习资料或者开源库，可以提交个PR或Issue。
+
 ## 学习资料
 
 [Compose官网](https://developer.android.com/jetpack/compose/documentation?hl=zh-cn)
@@ -77,8 +79,6 @@
 [compose-macos-theme](https://github.com/Chozzle/compose-macos-theme): MacOS theme for JetBrains Compose UI framework
 
 [Calendar](https://github.com/kizitonwose/Calendar): A highly customizable calendar view and compose library for Android.
-
-
 
 ## KMM
 
