@@ -80,6 +80,12 @@
 
 [Calendar](https://github.com/kizitonwose/Calendar): A highly customizable calendar view and compose library for Android.
 
+[ComposeViews](https://github.com/ltttttttttttt/ComposeViews): 跨平台Compose组件, Jatpack(JetBrains) Compose views, in to Android, Web, Desktop, iOS: Pager, Banner, Indicator, Refresh Layout, Flow Layout, Menu Floating Action Button, Pull To Refresh, Chain Scrollable Component, Scrollable App Bar(Nested Scroll View),Date Selector(Time Selector Date Picker), Swipe To Dismiss, Image viewer, Star Bar and more
+
+[LazyPeopleHttp](https://github.com/ltttttttttttt/LazyPeopleHttp): Kotlin跨平台的网络请求客户端, 比Retrofit更容易声明, Lazy people http, A type-safe HTTP client for JVM(Android, Desktop), iOS, js web.
+
+[Buff](https://github.com/ltttttttttttt/Buff): Compose中将Bean的某些字段自动转换为MutableState<T>, Add status to beans in Compose, Fields in beans can be directly used as the MutableState<T>
+
 ## KMM
 
 [Decompose](https://github.com/arkivanov/Decompose): Kotlin Multiplatform lifecycle-aware business logic components (aka BLoCs) with routing (navigation) and pluggable UI (Jetpack Compose, SwiftUI, JS React, etc.)
