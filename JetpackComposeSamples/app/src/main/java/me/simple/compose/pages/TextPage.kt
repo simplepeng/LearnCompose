@@ -12,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.colorspace.ColorSpaces
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -31,16 +32,8 @@ import me.simple.compose.helpers.LogHelper
 @Composable
 fun TextPage() {
     Column {
-        HelloWorld()
-        TextSizeSample()
-        FontStyleSample()
-        FontFamilySample()
-        LetterSpacingSample()
-        TextDecorationSample()
-        TextAlignSample()
-//        JustifyTextAlignSample()
-        LineHeightSample()
-//        OverFlowSample()
+        BasicTextSample()
+        BasicTextTextStyle()
     }
 }
 
@@ -68,7 +61,18 @@ fun BasicTextAnnotatedStringSample() {
 fun BasicTextTextStyle() {
     BasicText(
         text = "BasicTextTextStyle",
-        style = TextStyle.Default
+        style = TextStyle(
+//            color = Color(android.graphics.Color.RED),
+//            color = Color(0x00FF0000),
+//            color = Color(red = 255, green = 255, blue = 255, alpha = 255),
+            color = Color(
+                red = 255f,
+                green = 255f,
+                blue = 255f,
+                alpha = 255f,
+                colorSpace = ColorSpaces.Srgb
+            )
+        )
     )
 }
 

@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import me.simple.compose.pages.ButtonPage
 import me.simple.compose.pages.ImagePage
 import me.simple.compose.pages.TextFiledPage
+import me.simple.compose.pages.TextPage
 import me.simple.compose.ui.theme.JetpackComposeSamplesTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,9 +25,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    TextPage()
 //                    ImagePage()
 //                    TextFiledPage()
-                    ButtonPage()
+//                    ButtonPage()
                 }
             }
         }
