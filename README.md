@@ -86,6 +86,8 @@
 
 [Buff](https://github.com/ltttttttttttt/Buff): Compose中将Bean的某些字段自动转换为MutableState<T>, Add status to beans in Compose, Fields in beans can be directly used as the MutableState<T>
 
+[ExtendedSpans](https://github.com/saket/ExtendedSpans): Squiggly underlines and rounded corners for text in Compose UI
+
 ## KMM
 
 [Decompose](https://github.com/arkivanov/Decompose): Kotlin Multiplatform lifecycle-aware business logic components (aka BLoCs) with routing (navigation) and pluggable UI (Jetpack Compose, SwiftUI, JS React, etc.)
