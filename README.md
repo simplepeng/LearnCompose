@@ -86,6 +86,8 @@
 
 [Buff](https://github.com/ltttttttttttt/Buff): Compose中将Bean的某些字段自动转换为MutableState<T>, Add status to beans in Compose, Fields in beans can be directly used as the MutableState<T>
 
+[watchface](https://github.com/nikhil-mandlik-dev/watchface): Creating Clock Composable using Jetpack Compose Canvas API
+
 ## KMM
 
 [Decompose](https://github.com/arkivanov/Decompose): Kotlin Multiplatform lifecycle-aware business logic components (aka BLoCs) with routing (navigation) and pluggable UI (Jetpack Compose, SwiftUI, JS React, etc.)
