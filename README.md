@@ -88,6 +88,8 @@
 
 [watchface](https://github.com/nikhil-mandlik-dev/watchface): Creating Clock Composable using Jetpack Compose Canvas API
 
+[ExtendedSpans](https://github.com/saket/ExtendedSpans): Squiggly underlines and rounded corners for text in Compose UI
+
 ## KMM
 
 [Decompose](https://github.com/arkivanov/Decompose): Kotlin Multiplatform lifecycle-aware business logic components (aka BLoCs) with routing (navigation) and pluggable UI (Jetpack Compose, SwiftUI, JS React, etc.)
