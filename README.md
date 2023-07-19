@@ -7,6 +7,8 @@
 ## 学习资料
 
 [Compose官网](https://developer.android.com/jetpack/compose/documentation?hl=zh-cn)
+[API Guidelines for Jetpack Compose](https://github.com/androidx/androidx/blob/androidx-main/compose/docs/compose-api-guidelines.md)
+[API Guidelines for @Composable components in Jetpack Compose](https://github.com/androidx/androidx/blob/androidx-main/compose/docs/compose-component-api-guidelines.md)
 
 > 建议直接切换到英文版本查看，中文翻译版本没有英文原版详细。
 
