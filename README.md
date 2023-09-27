@@ -14,8 +14,6 @@
 
 > 建议直接切换到英文版本查看，中文翻译版本没有英文原版详细。
 
-[Jetpack Compose under the hood](https://medium.com/@banmarkovic/jetpack-compose-under-the-hood-7bb88f08c47e)
-
 [jetpackcompose.net](https://www.jetpackcompose.net)
 
 [ComposeCookBook](https://github.com/Gurupreet/ComposeCookBook)
@@ -35,6 +33,8 @@
 ## 好文分享
 
 [谷歌终于正视 LineHeight 了](https://mp.weixin.qq.com/s?__biz=Mzk0OTMzMjE2OQ==&mid=2247484485&idx=1&sn=8dd254aba666e2791dd5d380496b8b11&chksm=c358b5e3f42f3cf56af5352bdb6b610e52a2639d19fb7dcf58296e834539d272b43a53eafd4b&mpshare=1&scene=23&srcid=0731FQgVWn9ZPnu3WKDXtYkY&sharer_sharetime=1690766733935&sharer_shareid=0bc321ed0236b326ab9067f8ec06d1a4#rd)
+
+[Jetpack Compose under the hood](https://medium.com/@banmarkovic/jetpack-compose-under-the-hood-7bb88f08c47e)
 
 ## 开源库
 
